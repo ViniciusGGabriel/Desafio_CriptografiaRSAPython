@@ -4,7 +4,8 @@ import math
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
 # Pedir a mensagem que será encriptada 
-texto_base = str(open('D:\CriptografiaPython\Projeto\msg.criptografar.txt', 'r'))
+with open('D:\\CriptografiaPython\\Criptografia\\msg.criptografar.txt', 'r') as arquivo:
+    texto_base= arquivo.read()
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
 # Vamos randomizar os valores de P e Q e verificar se eles são primos
@@ -118,12 +119,10 @@ chave_D = calcular_D(chave_Z, chave_E)
 print(f"O valor de D é: {chave_D}")
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
-# Criptografa 
-texto_cifra = (texto_base**chave_E) % chave_N
-print("Esse é o texto encriptado", texto_cifra)
+# Converte a mensagem com a função ord() para Código Padrão Americano 
+numeros = [ord(caractere) for caractere in texto_base]
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
-# decriptar 
-texto_base_decriptado = (texto_cifra ** chave_D) % chave_N
-print("Esse é o texto decriptado ", texto_base_decriptado)
-# ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
+# Criptografa
+texto_cifra = [(numero ** chave_E) % chave_N for numero in numeros]
+print("Texto encriptado:", texto_cifra)
