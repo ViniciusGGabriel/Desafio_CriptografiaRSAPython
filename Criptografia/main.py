@@ -84,6 +84,7 @@ def calcular_E(z):
     # O valor para E é 65537
     e = 65537
     # Garante que E seja coprimo com Z
+    # gcd é uma função que procura o máximo divisor comum dentre dois valores
     while math.gcd(e, z) != 1:
         e = random.randint(2, z - 1)
     return e

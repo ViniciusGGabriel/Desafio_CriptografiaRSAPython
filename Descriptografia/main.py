@@ -1,8 +1,8 @@
-# Capturando entrada do usuário para chave_N
+# Recebe a entrada do usuário para chave_N
 chave_N = int(input("Digite o valor para chave_N: "))
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
-# Capturando entrada do usuário para chave_D
+# Recebe a entrada do usuário para chave_D
 chave_D = int(input("Digite o valor para chave_D: "))
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
@@ -11,6 +11,8 @@ texto_cifra = input("Digite os valores da mensagem separados por espaço: ")
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
 # Convertendo os valores para inteiros e dividindo a entrada com espaços
+# A parte int, texto_cifra.split() transforma uma grande string em pequenas ou seja ramifica 
+# A função map vai fazer todos itens da lista virar int e logo em seguida vem o list que transforma os valores numeros em uma lista, porem para funcionar tem que colocar os valores em espaço
 texto_cifra = list(map(int, texto_cifra.split()))
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
