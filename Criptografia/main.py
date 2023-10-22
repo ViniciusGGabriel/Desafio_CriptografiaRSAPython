@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
 # Importações
 import random
 import math
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
 # Pedir a mensagem que será encriptada 
-with open('D:\\CriptografiaPython\\Criptografia\\msg.criptografar.txt', 'r') as arquivo:
+# , encoding="utf-8" Faz o código ler o arquivo em UTF-8
+with open('D:\\CriptografiaPython\\Criptografia\\msg.criptografar.txt', 'r', encoding="utf-8") as arquivo:
     texto_base= arquivo.read()
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
@@ -66,6 +68,13 @@ def calcular_N(p, q):
 # Mostra a chave N e chama a função 
 chave_N = calcular_N(chave_P, chave_Q)
 print(f"O valor de N é: {chave_N}")
+# Transformando chave N em string
+chave_N_str = str(chave_N)
+# Abre o arquivo para edição ou cria
+with open('D:\\CriptografiaPython\\Criptografia\\dados\\chave_N.txt', 'w', encoding="utf-8") as chave_N_arquivo:
+     # Abre o arquivo e escreve dentro
+     chave_N_arquivo.write(chave_N_str)
+chave_N_arquivo.close()
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
 # Calcula o valor de Z
@@ -118,6 +127,13 @@ def calcular_D(z, e):
 # Mostra a chave D
 chave_D = calcular_D(chave_Z, chave_E)
 print(f"O valor de D é: {chave_D}")
+# Transforma em string o valor
+chave_D_str = str(chave_D)
+# Abre o arquivo ou cria
+with open('D:\\CriptografiaPython\\Criptografia\\dados\\chave_D.txt', 'w', encoding="utf-8") as chave_D_arquivo:
+     # Abre o arquivo e escreve dentro
+     chave_D_arquivo.write(chave_D_str)
+chave_D_arquivo.close()
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
 # Converte a mensagem com a função ord() para Código Padrão Americano 
@@ -126,4 +142,16 @@ numeros = [ord(caractere) for caractere in texto_base]
 
 # Criptografa
 texto_cifra = [(numero ** chave_E) % chave_N for numero in numeros]
-print("Texto encriptado:", texto_cifra)
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
+
+#Essa parte transforma a lista texto_cifra em uma string e já separa os valores com espaço
+texto_cifra_str = ' '.join(map(str, texto_cifra))
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
+
+# Abre o arquivo e escreve a mensagem dentro
+with open('D:\\CriptografiaPython\\Criptografia\\dados\\msg.criptografada.txt', 'w', encoding="utf-8") as msg_cripto:
+    # Abre ou cria o arquivo e coloca a mensagem
+    msg_cripto.write(texto_cifra_str)
+# Fecha o arquivo 
+msg_cripto.close()
+
