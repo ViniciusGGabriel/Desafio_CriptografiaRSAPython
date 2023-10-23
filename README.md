@@ -52,7 +52,7 @@ Calcula a inversão modular por forma do algoritmo de Euclides Estendido e busca
 
 ### Função responsável por testar se os valores são primo
 
-    Testa se o valor é primo por meio do teste de Miller Rabin
+Testa se o valor é primo por meio do teste de Miller Rabin
 
 <p align="center">
     <img src="https://bg-so-1.zippyimage.com/2023/10/22/0ef5053c65210007362e83c04efbfcba.png" alt="img">
