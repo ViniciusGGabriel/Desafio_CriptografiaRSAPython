@@ -50,7 +50,7 @@ def gerar_primo(bits):
 
 
 # Numero de primero em bits formular de acordo com a necessidade
-bits = 8
+bits = 16
 # Variáveis que vão receber os primos
 chave_P = gerar_primo(bits)
 chave_Q = gerar_primo(bits)

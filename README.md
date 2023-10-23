@@ -14,6 +14,50 @@ A dificuldade dessa criptografia reside na dificuldade de encontrar a chave N qu
 
 Dentro do diretório "Criptografia" reside o arquivo python que será responsável por criptografar a mensagem que tem que ser inserida dentro do arquivo "msg.criptografar.txt" e gerar as 5 chaves de forma aleatória com a biblioteca nativa do python random
 
+### Função responsável por criar as chaves P e Q com o parâmetro de bits para definir o tamanho dos numeros que serão gerados para as chaves
+
+<p align="center">
+    <img src="https://bg-so-1.zippyimage.com/2023/10/22/02380c624c271512d4afdb2f79e3ff8a.png" alt="img">
+</p>
+
+### Função responsável por criar as chaves N fazendo a multiplicação das chaves P e Q
+
+Essa parte do código também é responsável por abrir o arquivo e escrever a chave se não tiver o arquivo ele cria
+
+<p align="center">
+    <img src="https://bg-so-1.zippyimage.com/2023/10/22/8c68c8d30dbf60da75dd694026f1e374.png" alt="img">
+</p>
+
+### Função responsável por criar as chaves Z usada para achar a chave E e D
+
+<p align="center">
+    <img src="https://bg-so-1.zippyimage.com/2023/10/22/a35b96984b8e9efbadf13f8ca10768cf.png" alt="img">
+</p>
+
+### Função responsável por criar as chaves E
+
+Define um valor para achar um coprimo a chave Z definindo um valor máximo divisor comum com a função GDC
+
+<p align="center">
+    <img src="https://bg-so-1.zippyimage.com/2023/10/22/636cbe4b74bf7322f44a7124787068ec.png" alt="img">
+</p>
+
+### Função responsável por criar as chaves D e inversão modular
+
+Calcula a inversão modular por forma do algoritmo de Euclides Estendido e busca o máximo divisor comum
+
+<p align="center">
+    <img src="https://bg-so-1.zippyimage.com/2023/10/22/7d54e1a1b995c03fe46278e088516240.png" alt="img">
+</p>
+
+### Função responsável por testar se os valores são primo
+
+    Testa se o valor é primo por meio do teste de Miller Rabin
+
+<p align="center">
+    <img src="https://bg-so-1.zippyimage.com/2023/10/22/0ef5053c65210007362e83c04efbfcba.png" alt="img">
+</p>
+
 ## Referência
 
 - [Projeto do github, foi usado para referencia de como escrever o código](https://github.com/Everton42/video-youtube-rsa)
