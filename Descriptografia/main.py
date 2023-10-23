@@ -30,4 +30,4 @@ mensagem_original = ''.join(mensagem_descriptografada)
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
 # Mostra a mensagem
-print("Mensagem descriptografada:", mensagem_original)
+print("\nMensagem descriptografada:", mensagem_original)
