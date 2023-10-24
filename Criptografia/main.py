@@ -59,31 +59,20 @@ print(f"Número primo Q com {bits} bits: {chave_Q}")
 
 
 # Calcula o valor de N
-def calcular_N(p, q):
-    n = p * q
-    return n
-
-
-# Mostra a chave N e chama a função
-chave_N = calcular_N(chave_P, chave_Q)
+# Mostra a chave N e chama a função lambda
+chave_N = ((lambda p, q: p*q)(chave_P, chave_Q))
 print(f"O valor de N é: {chave_N}")
-# Transformando chave N em string
-chave_N_str = str(chave_N)
+
 # Abre o arquivo para edição ou cria
 with open('D:\\CriptografiaPython\\Criptografia\\dados\\chave_N.txt', 'w', encoding="utf-8") as chave_N_arquivo:
     # Abre o arquivo e escreve dentro
-    chave_N_arquivo.write(chave_N_str)
+    chave_N_arquivo.write(str(chave_N))
 chave_N_arquivo.close()
 
 
 # Calcula o valor de Z
-def calcular_Z(p, q):
-    z = (p - 1)*(q-1)
-    return z
-
-
-# Mostra a chave Z e chama a função
-chave_Z = calcular_Z(chave_P, chave_Q)
+# Mostra a chave Z e usa a função lambda
+chave_Z = ((lambda p, q: (p-1)*(q-1))(chave_P, chave_Q))
 print(f"O valor de Z é: {chave_Z}")
 
 
