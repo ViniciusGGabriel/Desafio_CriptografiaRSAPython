@@ -10,7 +10,7 @@ with open('D:\\CriptografiaPython\\Criptografia\\msg.criptografar.txt', 'r', enc
     texto_base = arquivo.read()
 
 
-# Vamos randomizar os valores de P e Q e verificar se eles são primos
+# Verifica se as chaves são valores primos
 def verificar_primos(number, y=5):
     # Faz a verificação para ver se não é 1, 2 ou 3 pois já são primos
     if number <= 1:
@@ -18,14 +18,13 @@ def verificar_primos(number, y=5):
     if number <= 3:
         return True
 
-
-# Testa se o valor é primo por meio do teste de Miller-Rabin
+    # Loop que vai testar se o valor é primo através do teste de Miller Rabin
     r, d = 0, number - 1
     while d % 2 == 0:
         r += 1
         d //= 2
     for Miller in range(y):
-        # A variável randomizado recebe um numero no intervalo de 2, number -2
+        # A variável randomiza e recebe um numero no intervalo de 2, "number" -2 um valor ente -1 e 1
         randomizado = random.randint(2, number - 2)
         x = pow(randomizado, d, number)
         if x == 1 or x == number - 1:
@@ -39,7 +38,7 @@ def verificar_primos(number, y=5):
     return True
 
 
-# Gera números aleatórios em bits
+# Gera números aleatórios em baseados em bits
 def gerar_primo(bits):
     while True:
         numero = random.getrandbits(bits)
@@ -70,9 +69,9 @@ with open('D:\\CriptografiaPython\\Criptografia\\dados\\chave_N.txt', 'w', encod
 chave_N_arquivo.close()
 
 
-# Calcula o valor de Z
-# Mostra a chave Z e usa a função lambda
+# Calcula o valor de Z usando a função lambda
 chave_Z = ((lambda p, q: (p-1)*(q-1))(chave_P, chave_Q))
+# Mostra a chave Z
 print(f"O valor de Z é: {chave_Z}")
 
 
