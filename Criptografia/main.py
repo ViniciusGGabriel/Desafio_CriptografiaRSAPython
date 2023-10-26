@@ -18,7 +18,8 @@ def verificar_primos(number, y=5):
     if number <= 3:
         return True
 
-    # Loop que vai testar se o valor é primo através do teste de Miller Rabin
+    # Loops que vai testar se o valor é primo através do teste de Miller Rabin
+    # O while faz divisões com resto 2 até que o D seja um numero impar
     r, d = 0, number - 1
     while d % 2 == 0:
         r += 1
