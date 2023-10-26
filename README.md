@@ -77,3 +77,5 @@ Testa se o valor é primo por meio do teste de Miller Rabin
 - [Algoritmo de Euclides estendido](https://www.youtube.com/watch?v=BsE1IAghIT4&list=TLPQMTgxMDIwMjOsfv5Nxhcw4g&index=2)
 
 - [Python documentação](https://docs.python.org/3/)
+
+- [Teste de Miller-Rabin](https://www.youtube.com/watch?v=yShR8oWeS0g&list=WL&index=2)
