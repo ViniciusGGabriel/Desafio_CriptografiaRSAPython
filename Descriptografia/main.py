@@ -25,8 +25,7 @@ except ValueError:
 # Descriptografa
 # Necessário as duas chaves D e N e a mensagem separa por espaços
 # Função chr busca o valor Unicode de cada numero
-mensagem_descriptografada = [
-    chr((numero ** chave_D) % chave_N) for numero in texto_cifra]
+mensagem_descriptografada = [chr((numero ** chave_D) % chave_N) for numero in texto_cifra]
 # O join é uma função que junta os elementos sequenciais fornecidos pelo usuário e como exemplo usa '' para falar que é um string vazia e dentro dela ele coloca os valores
 mensagem_original = ''.join(mensagem_descriptografada)
 
